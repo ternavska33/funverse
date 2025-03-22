@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FanVerse - Your Ultimate Pop Culture Shop</title>
+  <!-- Bootstrap CSS -->
+  <link 
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" 
+    rel="stylesheet">
+  <style>
+    /* Custom Styles */
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+    /* Hero Section */
+    .hero {
+      background: url('hero-image.jpg') no-repeat center center;
+      background-size: cover;
+      height: 500px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      background-color: rgba(0, 0, 0, 0.5);
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: bold;
+    }
+    /* Category Cards */
+    .category-card {
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+    .category-card:hover {
+      transform: scale(1.05);
+    }
+    /* Footer */
+    footer a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">FanVerse</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#navbarNav" aria-controls="navbarNav" 
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Comics</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Anime</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Games</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Merch</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Collectibles</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Sale</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content container">
+      <h1>Welcome to FanVerse</h1>
+      <p>Your ultimate destination for comics, anime, games, and more!</p>
+      <a href="#" class="btn btn-primary btn-lg">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- Featured Categories -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Explore Categories</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card category-card">
+            <img src="comics.jpg" class="card-img-top" alt="Comics">
+            <div class="card-body text-center">
+              <h5 class="card-title">Comics</h5>
+              <p class="card-text">Discover your favorite comic books and graphic novels.</p>
+              <a href="#" class="btn btn-outline-primary">View Comics</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card category-card">
+            <img src="anime.jpg" class="card-img-top" alt="Anime">
+            <div class="card-body text-center">
+              <h5 class="card-title">Anime</h5>
+              <p class="card-text">Find the latest anime merchandise and collectibles.</p>
+              <a href="#" class="btn btn-outline-primary">View Anime</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card category-card">
+            <img src="games.jpg" class="card-img-top" alt="Games">
+            <div class="card-body text-center">
+              <h5 class="card-title">Games</h5>
+              <p class="card-text">Get the best deals on gaming merchandise and accessories.</p>
+              <a href="#" class="btn btn-outline-primary">View Games</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Featured Products</h2>
+      <div class="row g-4">
+        <!-- Product Card 1 -->
+        <div class="col-md-3">
+          <div class="card">
+            <img src="product1.jpg" class="card-img-top" alt="Limited Edition Comic">
+            <div class="card-body text-center">
+              <h5 class="card-title">Limited Edition Comic</h5>
+              <p class="card-text">$19.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+            </div>
+          </div>
+        </div>
+        <!-- Product Card 2 -->
+        <div class="col-md-3">
+          <div class="card">
+            <img src="product2.jpg" class="card-img-top" alt="Anime Figure">
+            <div class="card-body text-center">
+              <h5 class="card-title">Anime Figure</h5>
+              <p class="card-text">$29.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+            </div>
+          </div>
+        </div>
+        <!-- Product Card 3 -->
+        <div class="col-md-3">
+          <div class="card">
+            <img src="product3.jpg" class="card-img-top" alt="Gaming T-Shirt">
+            <div class="card-body text-center">
+              <h5 class="card-title">Gaming T-Shirt</h5>
+              <p class="card-text">$15.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+            </div>
+          </div>
+        </div>
+        <!-- Product Card 4 -->
+        <div class="col-md-3">
+          <div class="card">
+            <img src="product4.jpg" class="card-img-top" alt="Collector's Poster">
+            <div class="card-body text-center">
+              <h5 class="card-title">Collector's Poster</h5>
+              <p class="card-text">$9.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light py-4">
+    <div class="container text-center">
+      <p>&copy; 2025 FanVerse. All rights reserved.</p>
+      <p>
+        <a href="#" class="text-light me-3">About Us</a>
+        <a href="#" class="text-light me-3">Contact</a>
+        <a href="#" class="text-light">FAQs</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js">
+  </script>
+  <!-- Optional Custom JS -->
+  <script>
+    // Example: simple script to log a click on a category
+    document.querySelectorAll('.category-card').forEach(card => {
+      card.addEventListener('click', function() {
+        console.log('Category clicked!');
+      });
+    });
+  </script>
+</body>
+</html>
