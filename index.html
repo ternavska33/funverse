@@ -1,236 +1,185 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FanVerse - Your Ultimate Pop Culture Shop</title>
-  <!-- Bootstrap CSS -->
-  <link 
-    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" 
-    rel="stylesheet">
+  <title>TheNewNormal</title>
   <style>
-    /* Custom Styles */
-    body {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      background-color: #f8f9fa;
-      margin: 0;
-      padding: 0;
-    }
-    /* Hero Section */
-    .hero {
-      background: url('images/background.jpg') no-repeat center center;
-      background-size: cover;
-      height: 500px;
-      position: relative;
+    body { margin: 0; font-family: Arial, sans-serif; }
+    nav {
+      background-color: #222;
       color: #fff;
+      padding: 10px 20px;
       display: flex;
-      align-items: center;
       justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+    /* Global button style */
+    .btn {
+      background-color: #007BFF;
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border-radius: 12px;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+    }
+    .section {
+      padding: 60px 20px;
+    }
+    /* Block 1: Header with background image and overlay */
+    .header-section {
+      height: 100vh;
+      background: url('https://via.placeholder.com/1500x800') no-repeat center center/cover;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .header-section::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(128, 128, 128, 0.5); /* grey overlay */
+    }
+    .header-text {
+      position: relative; /* ensures text is above the overlay */
+      color: #fff;
+      font-size: 48px;
+      font-weight: bold;
       text-align: center;
     }
-    .hero::after {
-      content: "";
-      background-color: rgba(0, 0, 0, 0.5);
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+    /* Block 2: About Will Wood with light background */
+    .about-section {
+      background-color: #f0f0f0;
+      color: #000;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    .hero-content {
-      position: relative;
-      z-index: 1;
+    .about-section img {
+      max-width: 300px;
+      border-radius: 8px;
     }
-    .hero h1 {
-      font-size: 3.5rem;
-      font-weight: bold;
+    .about-section .btn {
+      margin-top: auto;
     }
-    /* Dummy hero background image (for later replacement) */
-    .hero-background-dummy {
-      margin-top: 20px;
-      max-width: 80%;
-      height: auto;
-      border: 2px dashed #fff;
+    /* Block 3: Albums with dark background */
+    .albums-section {
+      background-color: #333;
+      color: #fff;
     }
-    /* Category Cards */
-    .category-card {
-      transition: transform 0.2s ease;
-      cursor: pointer;
+    .albums-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
     }
-    .category-card:hover {
-      transform: scale(1.05);
+    .album-item {
+      background: #444;
+      padding: 20px;
+      border-radius: 8px;
+      width: 280px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
     }
-    /* Footer */
-    footer a {
-      text-decoration: none;
+    .album-item a.btn {
+      margin-top: auto;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #222;
+      color: #fff;
     }
   </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="#">FanVerse</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-              data-bs-target="#navbarNav" aria-controls="navbarNav" 
-              aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#">Comics</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Manga</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Anime</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Games</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Merch</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Collectibles</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Sale</a></li>
-        </ul>
-      </div>
-    </div>
+  <nav>
+    <a href="about.html">Про Will Wood</a>
+    <a href="#albums">Альбоми</a>
+    <a href="contact.html">Контакт</a>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content container">
-      <h1>Welcome to FanVerse</h1>
-      <p>Your ultimate destination for comics, anime, games, and more!</p>
-      <a href="#" class="btn btn-primary btn-lg">Shop Now</a>
+  <!-- Block 1: Header with background image, grey overlay, and welcome text -->
+  <section class="header-section">
+    <div class="header-text">
+      Ласкаво просимо до TheNewNormal - фан-сторінки Віл Вуда
     </div>
   </section>
 
-  <!-- Featured Categories -->
-  <section class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">Explore Categories</h2>
-      <div class="row g-4">
-        <!-- Comics Category -->
-        <div class="col-md-3">
-          <div class="card category-card">
-            <img src="images/dev-d2Py_uhXJQo-unsplash.jpg" class="card-img-top" alt="Comics">
-            <div class="card-body text-center">
-              <h5 class="card-title">Comics</h5>
-              <p class="card-text">Discover your favorite comic books and graphic novels.</p>
-              <a href="#" class="btn btn-outline-primary">View Comics</a>
-            </div>
-          </div>
-        </div>
-        <!-- Manga Category -->
-        <div class="col-md-3">
-          <div class="card category-card">
-            <img src="images/samuel-regan-asante-z6o6LBZx-4U-unsplash.jpg" class="card-img-top" alt="Manga">
-            <div class="card-body text-center">
-              <h5 class="card-title">Manga</h5>
-              <p class="card-text">Explore the world of manga for the best prices.</p>
-              <a href="#" class="btn btn-outline-primary">View Manga</a>
-            </div>
-          </div>
-        </div>
-        <!-- Anime Category -->
-        <div class="col-md-3">
-          <div class="card category-card">
-            <img src="images/dex-ezekiel-IxDPZ-AHfoI-unsplash.jpg" class="card-img-top" alt="Anime">
-            <div class="card-body text-center">
-              <h5 class="card-title">Anime</h5>
-              <p class="card-text">Find the latest anime merchandise and collectibles.</p>
-              <a href="#" class="btn btn-outline-primary">View Anime</a>
-            </div>
-          </div>
-        </div>
-        <!-- Games Category -->
-        <div class="col-md-3">
-          <div class="card category-card">
-            <img src="images/karthik-balakrishnan-NrS53eUKgiE-unsplash.jpg" class="card-img-top" alt="Games">
-            <div class="card-body text-center">
-              <h5 class="card-title">Games</h5>
-              <p class="card-text">Get the best deals on gaming merchandise and accessories.</p>
-              <a href="#" class="btn btn-outline-primary">View Games</a>
-            </div>
-          </div>
-        </div>
+  <!-- Block 2: About Will Wood -->
+  <section class="section about-section" id="about">
+    <h2>Про Will Wood</h2>
+    <img src="https://via.placeholder.com/300" alt="Will Wood">
+    <p>Will Wood – американський музикант та співач-сонграйтер. Його творчість вражає оригінальні композиції та глибокий зміст.</p>
+    <a href="about.html" class="btn">Читати далі</a>
+  </section>
+
+  <!-- Block 3: Albums -->
+  <section class="section albums-section" id="albums">
+    <h2>Альбоми</h2>
+    <div class="albums-list">
+      <div class="album-item">
+        <h3>Camp Here &amp; There (Extended OST)</h3>
+        <p>Release Date: February 20, 2025</p>
+        <a href="album-camp.html" target="_blank" class="btn">Переглянути</a>
+      </div>
+      <div class="album-item">
+        <h3>The New Normal! (The Normal Album 2024 Edit)</h3>
+        <p>Release Date: August 9, 2024</p>
+        <a href="album-newnormal.html" target="_blank" class="btn">Переглянути</a>
+      </div>
+      <div class="album-item">
+        <h3>IN CASE I DIE (Live)</h3>
+        <p>Release Date: January 13, 2023</p>
+        <a href="album-incausedie.html" target="_blank" class="btn">Переглянути</a>
+      </div>
+      <div class="album-item">
+        <h3>“In case I make it,”</h3>
+        <p>Release Date: July 29, 2022</p>
+        <a href="album-incasemakeit.html" target="_blank" class="btn">Переглянути</a>
+      </div>
+      <div class="album-item">
+        <h3>Here &amp; There Soundtrack: Campfire Songs Edition</h3>
+        <p>Release Date: April 8, 2022</p>
+        <a href="album-campfiresongs.html" target="_blank" class="btn">Переглянути</a>
+      </div>
+      <div class="album-item">
+        <h3>Camp Here &amp; There (Original Series Soundtrack)</h3>
+        <p>Release Date: May 8, 2021</p>
+        <a href="album-originalseries.html" target="_blank" class="btn">Переглянути</a>
+      </div>
+      <div class="album-item">
+        <h3>The Normal Album</h3>
+        <p>Release Date: July 10, 2020</p>
+        <a href="album-normal.html" target="_blank" class="btn">Переглянути</a>
+      </div>
+      <div class="album-item">
+        <h3>Alma Mater</h3>
+        <p>Release Date: May 10, 2020</p>
+        <a href="album-almamater.html" target="_blank" class="btn">Переглянути</a>
       </div>
     </div>
   </section>
 
-  <!-- Featured Products -->
-  <section class="py-5 bg-light">
-    <div class="container">
-      <h2 class="text-center mb-4">Featured Products</h2>
-      <div class="row g-4">
-        <!-- Product Card 1 -->
-        <div class="col-md-3">
-          <div class="card">
-            <!-- Dummy product image (replace with your link later) -->
-            <img src="images/limited edition comics.jpg" class="card-img-top" alt="Limited Edition Comic">
-            <div class="card-body text-center">
-              <h5 class="card-title">Limited Edition Comic</h5>
-              <p class="card-text">$19.99</p>
-              <a href="#" class="btn btn-primary">Buy Now</a>
-            </div>
-          </div>
-        </div>
-        <!-- Product Card 2 -->
-        <div class="col-md-3">
-          <div class="card">
-            <!-- Dummy product image -->
-            <img src="images/anime figure.jpg" class="card-img-top" alt="Anime Figure">
-            <div class="card-body text-center">
-              <h5 class="card-title">Anime Figure</h5>
-              <p class="card-text">$29.99</p>
-              <a href="#" class="btn btn-primary">Buy Now</a>
-            </div>
-          </div>
-        </div>
-        <!-- Product Card 3 -->
-        <div class="col-md-3">
-          <div class="card">
-            <!-- Dummy product image -->
-            <img src="images/headset.jpg" class="card-img-top" alt="Gaming Headphones">
-            <div class="card-body text-center">
-              <h5 class="card-title">Gaming Headphones</h5>
-              <p class="card-text">$59.99</p>
-              <a href="#" class="btn btn-primary">Buy Now</a>
-            </div>
-          </div>
-        </div>
-        <!-- Product Card 4 -->
-        <div class="col-md-3">
-          <div class="card">
-            <!-- Dummy product image -->
-            <img src="images/poster.jpg" class="card-img-top" alt="Collector's Poster">
-            <div class="card-body text-center">
-              <h5 class="card-title">Collector's Poster</h5>
-              <p class="card-text">$9.99</p>
-              <a href="#" class="btn btn-primary">Buy Now</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-dark text-light py-4">
-    <div class="container text-center">
-      <p>&copy; 2025 FanVerse. All rights reserved.</p>
-      <p>
-        <a href="#" class="text-light me-3">About Us</a>
-        <a href="#" class="text-light me-3">Contact</a>
-        <a href="#" class="text-light">FAQs</a>
-      </p>
-    </div>
+  <footer>
+    <p>&copy; 2025 TheNewNormal</p>
   </footer>
-
-  <!-- Bootstrap JS Bundle -->
-  <script 
-    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js">
-  </script>
-  <!-- Optional Custom JS -->
-  <script>
-    // Example: simple script to log a click on a category
-    document.querySelectorAll('.category-card').forEach(card => {
-      card.addEventListener('click', function() {
-        console.log('Category clicked!');
-      });
-    });
-  </script>
 </body>
 </html>
